@@ -1,0 +1,11 @@
+﻿"test_prompt","agent_response_excerpt","intent_resolution","relevance","groundedness","comments"
+"day-hike-gear","Essential gear for a summer day hike in moderate terrain (with safety and comfort in mind):
+
+## 1) Carrying + hydration (non‑negotiables)
+- **Daypack (15–25L)**","5","3","5","Good safety focus and practical guidance"
+"overnight-camping","Prepare in three tracks: **plan (where/when/how), pack (systems, not items), and practice (skills + safety)**. Here’s a solid, beginner-proof approach for your ","3","3","5","Relevant response with useful detail"
+"three-day-backpacking","Most critical safety considerations for a 3‑day October mountain backpacking trip (prioritized for risk reduction):
+
+## 1) Weather volatility + cold exposure (y","3","5","5","Relevant response with useful detail"
+"trail-difficulty","As a beginner, the best way to judge whether a trail matches your fitness level is to use a few objective trail metrics (distance, elevation gain, time, surface","4","4","3","Helpful and actionable answer"
+"winter-hiking","Winter hiking adds three big challenges compared to summer: **cold exposure**, **snow/ice traction**, and **short daylight + harsher weather**. Here’s what to a","3","4","3","Clear and comprehensive response"
