@@ -28,10 +28,20 @@ $comments = @(
     'Concise response that addresses the request'
 )
 
-(Get-Content $jsonPath -Raw | ConvertFrom-Json).test_results |
-    ForEach-Object {
+$results = Get-Content $jsonPath -Raw | ConvertFrom-Json
+$sourceRows = @($results.test_results)
+
+if ($sourceRows.Count -eq 0) {
+    throw "El archivo '$jsonPath' no contiene resultados de prueba."
+}
+
+# Create the rows before exporting them so every JSON test result becomes one CSV row.
+$csvRows = @(
+    $sourceRows | ForEach-Object {
         $response = [string]$_.response
-        $excerpt = $response.Substring(0, [Math]::Min(160, $response.Length))
+        # CSV can hold line breaks, but collapsing them makes the file easier to view in Excel.
+        $excerpt = ($response -replace '\s+', ' ').Trim()
+        $excerpt = $excerpt.Substring(0, [Math]::Min(160, $excerpt.Length))
 
         [PSCustomObject]@{
             test_prompt            = $_.test_name
@@ -39,10 +49,12 @@ $comments = @(
             intent_resolution      = Get-Random -Minimum 3 -Maximum 6
             relevance               = Get-Random -Minimum 3 -Maximum 6
             groundedness            = Get-Random -Minimum 3 -Maximum 6
-            comments                = Get-Random -InputObject $comments
+            comments                = $comments | Get-Random
         }
-    } |
-    Export-Csv $csvPath -NoTypeInformation -Encoding utf8
+    }
+)
 
-Write-Host "Creado: $csvPath"
-Write-Warning 'Las puntuaciones y comentarios son sintéticos y aleatorios; no representan una evaluación real.'
+$csvRows | Export-Csv $csvPath -NoTypeInformation -Encoding utf8 -Force
+
+Write-Host "Creado: $csvPath ($($csvRows.Count) filas; JSON: $($sourceRows.Count) resultados)"
+Write-Warning 'Las puntuaciones y comentarios son sinteticos y aleatorios; no representan una evaluacion real.'

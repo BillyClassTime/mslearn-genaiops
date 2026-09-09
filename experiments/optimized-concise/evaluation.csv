@@ -1,0 +1,6 @@
+﻿"test_prompt","agent_response_excerpt","intent_resolution","relevance","groundedness","comments"
+"day-hike-gear","For a summer **day hike in moderate terrain**, bring the “essentials” plus a few warm‑weather specifics. I’ll assume a **4–8 mile** outing with a few hours on t","3","5","5","Good safety focus and practical guidance"
+"overnight-camping","Prepare in four tracks: (1) pick an easy, forgiving plan, (2) get the right gear and test it, (3) practice camp basics before you go, and (4) build safety margi","4","3","3","Good safety focus and practical guidance"
+"three-day-backpacking","Most critical October mountain backpacking safety considerations (3 days) come down to **cold + rapidly changing weather, shorter daylight, navigation, and self","4","4","3","Concise response that addresses the request"
+"trail-difficulty","To judge whether a trail fits your fitness level as a beginner, use a few concrete filters—distance, elevation, time, and “exit options”—then validate with a sm","4","3","4","Concise response that addresses the request"
+"winter-hiking","Winter hiking adds two big challenges compared to summer: **cold exposure** and **traction/shorter daylight**. Here’s what to add/upgrade and the key precaution","4","3","5","Helpful and actionable answer"
